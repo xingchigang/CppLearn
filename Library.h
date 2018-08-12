@@ -21,6 +21,7 @@ void checkOutBook();
 void status();
 char *getString(char *msg);
 void returnBook();
+int menu();
 
 class Patron {
 private:
@@ -105,8 +106,7 @@ public:
     }
 };
 
-std::list<Author> catalog['Z' + 1];
-std::list<Patron> people['Z' + 1];
+
 
 
 

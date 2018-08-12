@@ -3,7 +3,8 @@
 //
 
 #include "Library.h"
-
+std::list<Author> catalog['Z' + 1];
+std::list<Patron> people['Z' + 1];
 //const 类型的容器只能用 const_iterator
 std::ostream& Author::printAuthor(std::ostream &out) const {
     out << name << std::endl;
@@ -38,7 +39,7 @@ std::ostream& Patron::printPatron(std::ostream &out) const {
 
 template <typename T>
 std::ostream& operator<< (std::ostream& out, const std::list<T>& lst) {
-    for (std::list<T>::const_iterator ref = lst.begin(); ref != lst.end(); ++ref) {
+    for (typename std::list<T>::const_iterator ref = lst.begin(); ref != lst.end(); ++ref) {
         out << *ref;
     }
     return std::cout;
@@ -155,4 +156,12 @@ void returnBook() {
     CheckedOutBook checkedOutBook(authorRef, bookRef);
     (*bookRef).patron = 0;
     (*patronRef).books.remove(checkedOutBook);
+}
+
+int menu() {
+    int option;
+    std::cout << "\nEnter one of the following options:\n" << "1. Include a book in the catalog\n 2.Check out a book\n 3. Return a book\n 4. Status\n5. Exit\n" << "Your option?";
+    std::cin >> option;
+    std::cin.get();
+    return option;
 }
