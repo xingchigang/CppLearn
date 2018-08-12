@@ -126,6 +126,33 @@ void returnBook() {
     std::list<Book>::iterator bookRef;
     std::list<Patron>::iterator patronRef;
     while (true) {
-        
+        patron.name = getString("Enter patron's name");
+        patronRef = find(people[patron.name[0]].begin(), people[patron.name[0]].end(), patron);
+        if (patronRef == people[patron.name[0]].end()) {
+            std::cout << "Patron's name misspelled\n";
+        }
+        else break;
     }
+
+    while (true) {
+        author.name = getString("Enter author's name");
+        authorRef = find(catalog[author.name[0]].begin(), catalog[author.name[0]].end(), author);
+        if (authorRef == catalog[author.name[0]].end()){
+            std::cout << "Misspelled author's name\n";
+        }
+        else break;
+    }
+
+    while (true) {
+        book.title = getString("Enter the title of the bool:");
+        bookRef = find((*authorRef).books.begin(), (*authorRef).books.end(), book);
+        if (bookRef == (*authorRef).books.end()) {
+            std::cout << "Misspelled titles\n";
+        }
+        else break;
+    }
+
+    CheckedOutBook checkedOutBook(authorRef, bookRef);
+    (*bookRef).patron = 0;
+    (*patronRef).books.remove(checkedOutBook);
 }

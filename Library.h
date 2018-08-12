@@ -20,6 +20,7 @@ void includeBook();
 void checkOutBook();
 void status();
 char *getString(char *msg);
+void returnBook();
 
 class Patron {
 private:
