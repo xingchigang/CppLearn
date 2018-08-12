@@ -3,8 +3,10 @@
 //
 
 #include "Library.h"
-std::list<Author> catalog['Z' + 1];
-std::list<Patron> people['Z' + 1];
+std::list<Author> catalog['Z' + 1];//书籍的作者，以字母为索引
+std::list<Patron> people['Z' + 1];//至少用过一次图书馆的人 以字母为索引
+//需要注意
+
 //const 类型的容器只能用 const_iterator
 std::ostream& Author::printAuthor(std::ostream &out) const {
     out << name << std::endl;
