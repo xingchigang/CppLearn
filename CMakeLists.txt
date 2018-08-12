@@ -6,6 +6,6 @@ project(CppLearn)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++0x")
 #源文件目录：
-set(SOURCE_FILES main.cpp main.h LinkedList.cpp LinkedList.h)
+set(SOURCE_FILES main.cpp main.h Library.cpp Library.h)
 #添加要编译的可执行文件：
 add_executable(CppLearn ${SOURCE_FILES} )
