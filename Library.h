@@ -30,6 +30,7 @@ void status();
 char *getString(char *msg);
 void returnBook();
 int menu();
+int test();
 
 class Patron {
 private:
