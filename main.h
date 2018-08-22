@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include "QueueEx.h"
 
 template <typename T>
 void printVector(std::vector<T> vectorIn);
